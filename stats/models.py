@@ -9,7 +9,7 @@ class Player(models.Model):
         return f"{self.first_name} {self.last_name} #{self.jersey_number}"
 
 class Season(models.Model):
-    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    player = models.ForeignKey(Player, on_delete=models.CASCADE,related_name="seasons",)
     year = models.IntegerField()
     ppg = models.DecimalField(max_digits=3, decimal_places=1)
     rpg = models.DecimalField(max_digits=3, decimal_places=1)
